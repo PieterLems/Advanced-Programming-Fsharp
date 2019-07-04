@@ -6,7 +6,11 @@
     <DebugType>portable</DebugType>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Practice.fs" />
+    <Compile Include="Tutorial.fs" />
+    <Compile Include="BasicFunctions.fs" />
+    <Compile Include="EasyFunctions.fs" />
+    <Compile Include="AverageFunctions.fs" />
+    <Compile Include="HardFunctions.fs"/>
     <Compile Include="Main.fs" />
   </ItemGroup>
   <Import Project="..\.paket\Paket.Restore.targets" />
