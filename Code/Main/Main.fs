@@ -1,5 +1,6 @@
 module Main
 open System
+open EasyFunctions
 open Tutorial
 [<EntryPoint>]
 // let main argv =
@@ -8,5 +9,6 @@ open Tutorial
 //     0 // return an integer exit code
 let main argv =
 
+  EasyFunctions()
   Tutorial()
   0
