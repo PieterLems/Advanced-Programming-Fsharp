@@ -1,5 +1,5 @@
 module Answers
-//UNIT 1
+//BASIC FUNCTIONS
 let rec allNumbers (n : int) : string =
   if n < 0 then
     ""
@@ -61,9 +61,7 @@ let rec toBase (n : int) (_base : int) : string =
     let digit = n % _base
     (toBase (n / _base) _base) + (string digit)
 
-
-//UNIT 3
-
+//EASYFUNCTIONS
 
 let rec last (l : List<'a>) : Option<'a> =
   match l with
@@ -146,25 +144,7 @@ let rec mergeSort (l : List<'a>) : List<'a> =
     merge sortedL1 sortedL2
 
 
-let testUnit3() =
-  let l1 = [-1;0;2;3;5;6]
-  let l2 = [0;1;2;5;7;23]
-  let rl = [0;1;1;2;3;3;3;2;3;4;4;4;5;0;0;0;0;0]
-  let ul = [5;0;-1;3;2;3;-25;5]
-  let aeneid = "Arma virumque cano, Troiae qui primum ab oris"
-  printfn "%A" (last l1)
-  printfn "%A" (append l1 l2)
-  printfn "%A" (rev l1)
-  printfn "%A" (compress rl)
-  printfn "%A" (
-    caesarCypher (
-      aeneid.ToLower().ToCharArray() |> 
-      Array.toList) 3 |> 
-      List.map string |> 
-      List.fold (+) "")
-  printfn "%A" (splitAt 6 rl)
-  printfn "%A" (merge l1 l2)
-  printfn "%A" (mergeSort ul)
+
 
 
 //UNIT4
@@ -244,18 +224,6 @@ let rec map2Safe (f : 'a -> 'b -> 'c) (l1 : List<'a>) (l2 : List<'b>) :
   | x :: xs,y :: ys ->
       (Some (f x y)) :: (map2Safe f xs ys)
 
-let testUnit4() =
-  let l = [4;5;1;2;3;25;256]
-  let l1 = "axsdsdy".ToCharArray() |> Array.toList |> List.map(fun x -> string x)
-  let cl = [[3;1;4];[5;0;1];[2];[4;5];[1;3;2]]
-  printfn "%A" (mapFoldFast (fun x -> x + 1) l)
-  printfn "%A" (filterFold (fun x -> x % 2 = 0) l)
-  printfn "%A" (flatten cl)
-  printfn "%A" (map2 (fun x y -> (string x) + y) l l1)
-  printfn "%A" (fold2 (fun s x y -> s + (string x) + y) "" l l1)
-  printfn "%A" (zip l l1)
-  printfn "%A" (zipFold l l1)
-  printfn "%A" (map2Safe (fun x y -> x :: y) l cl)
 
 
 //UNIT 2
@@ -347,3 +315,37 @@ let test() =
 
         
 
+
+let testUnit2_3() =
+  let l1 = [-1;0;2;3;5;6]
+  let l2 = [0;1;2;5;7;23]
+  let rl = [0;1;1;2;3;3;3;2;3;4;4;4;5;0;0;0;0;0]
+  let ul = [5;0;-1;3;2;3;-25;5]
+  let aeneid = "Arma virumque cano, Troiae qui primum ab oris"
+  printfn "%A" (last l1)
+  printfn "%A" (append l1 l2)
+  printfn "%A" (rev l1)
+  printfn "%A" (compress rl)
+  printfn "%A" (
+    caesarCypher (
+      aeneid.ToLower().ToCharArray() |> 
+      Array.toList) 3 |> 
+      List.map string |> 
+      List.fold (+) "")
+  printfn "%A" (splitAt 6 rl)
+  printfn "%A" (merge l1 l2)
+  printfn "%A" (mergeSort ul)
+
+
+let testUnit4() =
+  let l = [4;5;1;2;3;25;256]
+  let l1 = "axsdsdy".ToCharArray() |> Array.toList |> List.map(fun x -> string x)
+  let cl = [[3;1;4];[5;0;1];[2];[4;5];[1;3;2]]
+  printfn "%A" (mapFoldFast (fun x -> x + 1) l)
+  printfn "%A" (filterFold (fun x -> x % 2 = 0) l)
+  printfn "%A" (flatten cl)
+  printfn "%A" (map2 (fun x y -> (string x) + y) l l1)
+  printfn "%A" (fold2 (fun s x y -> s + (string x) + y) "" l l1)
+  printfn "%A" (zip l l1)
+  printfn "%A" (zipFold l l1)
+  printfn "%A" (map2Safe (fun x y -> x :: y) l cl)
