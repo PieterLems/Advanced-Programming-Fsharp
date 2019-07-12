@@ -1,16 +1,14 @@
-<?xml version="1.0" encoding="utf-8"?>
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <TargetFramework>netcoreapp2.1</TargetFramework>
-    <DebugType>portable</DebugType>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Tutorial.fs" />
     <Compile Include="BasicFunctions.fs" />
     <Compile Include="EasyFunctions.fs" />
     <Compile Include="AverageFunctions.fs" />
-    <Compile Include="HardFunctions.fs"/>
+    <Compile Include="Tutorial.fs" />
+    <Compile Include="HardFunctions.fs" />
     <Compile Include="Main.fs" />
   </ItemGroup>
   <Import Project="..\.paket\Paket.Restore.targets" />

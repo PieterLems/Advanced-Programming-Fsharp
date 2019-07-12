@@ -61,6 +61,8 @@ let rec toBase (n : int) (_base : int) : string =
     let digit = n % _base
     (toBase (n / _base) _base) + (string digit)
 
+
+
 //EASYFUNCTIONS
 
 let rec last (l : List<'a>) : Option<'a> =
@@ -90,6 +92,7 @@ let rec rev (l : List<'a>) : List<'a> =
 let palindrome (l : List<'a>) : bool =
   (rev l) = l
 
+
 let rec compress (l : List<'a>) : List<'a> =
   match l with
   | [] -> []
@@ -111,6 +114,9 @@ let rec caesarCypher (l : List<char>) (shift : int) : List<char> =
   match l with
   | [] -> []
   | x :: xs -> (shiftChar x shift) :: (caesarCypher xs shift)
+
+
+//AVERAGEFUNCTIONS
 
 let rec splitAt (i : int) (l : List<'a>) : List<'a> * List<'a> =
   match l with
@@ -147,7 +153,7 @@ let rec mergeSort (l : List<'a>) : List<'a> =
 
 
 
-//UNIT4
+//HARD FUNCTIONS
 
 //This is the O(n^2) version, because for each element of the list
 //you append its mapped counterpart at the end, thus it is n * O(n) = O(n^2)
@@ -226,7 +232,6 @@ let rec map2Safe (f : 'a -> 'b -> 'c) (l1 : List<'a>) (l2 : List<'b>) :
 
 
 
-//UNIT 2
 open System
 
 let r = Random()

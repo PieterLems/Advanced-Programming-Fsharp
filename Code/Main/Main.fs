@@ -1,14 +1,21 @@
 module Main
 open System
+open BasicFunctions
 open EasyFunctions
+open AverageFunctions
+open HardFunctions
 open Tutorial
-[<EntryPoint>]
-// let main argv =
-//     // printfn "%A" argv
-//     testPractice()
-//     0 // return an integer exit code
-let main argv =
 
+
+[<EntryPoint>]
+let main argv =
+  BasicFunctions()
+  printfn "\n"
   EasyFunctions()
+  printfn "\n"
+  AverageFunctions()
+  printfn "\n"
+  HardFunctions()
+  printfn "\n"
   Tutorial()
   0
